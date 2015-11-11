@@ -1,2 +1,2 @@
 # libreriarufino
-Libreria de python para el procesamiento de los dump de wikipedia con el fin de hacerles analisis de corpus
+Proyecto de libreria en python para el procesamiento de los dump de wikipedia, que tiene como finalidad hacer analisis de corpus
