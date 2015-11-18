@@ -11,6 +11,12 @@ def split_words(text):
         #text=text.decode("utf-8").replace(char,u" ")
         text=text.replace(char," ")
     return text.split()
+    
+# SENTENCE TOKENIZER
+def split_sentences(text):
+	for sentence_separator in [u'. ',u'.\n',u'? ',u'! ',u'?\n',u'!\n',u'; ',u';\n',u'- ',u'--',u'...',u'\n',u'\n\n',u'\n\n\n']:
+		text=text.replace(sentence_separator,u'|||')
+		return text.split(u'|||')
 
 
 # ISO LANGUAGES CODES AND NAMES
