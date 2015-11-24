@@ -180,6 +180,7 @@ def clean_article(article):
             article=cleaning_pattern.sub(t1,article)
         except:
             article=cleaning_pattern.sub(t,article)
+    re.purge()
     return article
         
     
