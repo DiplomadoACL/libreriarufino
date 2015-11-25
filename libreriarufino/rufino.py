@@ -149,6 +149,8 @@ def get_pages(url):
                 #print "*",
                 yield data[pos_start_page:pos_end_page+7]
                 data=data[pos_end_page+7:]
+            else:
+            	data=data[pos_start_page:]
 
 def get_articles(url,only_text=True):
     for page in get_pages(url):
