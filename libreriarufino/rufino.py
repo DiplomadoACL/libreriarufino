@@ -12,6 +12,14 @@ def split_words(text):
         text=text.replace(char," ")
     return text.split()
     
+# SENTENCE SPLITER
+# BY: Alfredo Morales
+def split_sentences(text):
+    for sentence_separator in [u'. ',u'.\n',u'? ',u'! ',u'?\n',u'!\n',u'; ',u';\n',u'- ',u'--',u'...',u'\n',u'\n\n',u'\n\n\n']:
+	text=text.replace(sentence_separator,u'|||')
+    return text.split(u'|||')
+    
+    
 # SENTENCE TOKENIZER
 def split_sentences(text):
 	for sentence_separator in [u'. ',u'.\n',u'? ',u'! ',u'?\n',u'!\n',u'; ',u';\n',u'- ',u'--',u'...',u'\n',u'\n\n',u'\n\n\n']:
