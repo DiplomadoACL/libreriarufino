@@ -197,7 +197,8 @@ def clean_article(article):
 
 # http://dumps.wikimedia.org/backup-index.html
 WIKIPEDIA_URLS={
-"en":"http://dumps.wikimedia.org/enwiki/20151002/enwiki-20151002-pages-meta-current.xml.bz2",
+#"en":"http://dumps.wikimedia.org/enwiki/20151002/enwiki-20151002-pages-meta-current.xml.bz2",
+"en":"https://dumps.wikimedia.org/enwiki/20151102/enwiki-20151102-pages-meta-current.xml.bz2", #ACUALIZADO NOV 2015
 "es":"http://dumps.wikimedia.org/eswiki/20151102/eswiki-20151102-pages-meta-current.xml.bz2",
 "fr":"http://dumps.wikimedia.org/frwiki/20151020/frwiki-20151020-pages-meta-current1.xml.bz2",
 "de":"http://dumps.wikimedia.org/dewiki/20151102/dewiki-20151102-pages-meta-current.xml.bz2",
