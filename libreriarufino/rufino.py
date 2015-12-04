@@ -2,7 +2,22 @@
 import urllib2
 import bz2
 import re
+import numpy
 
+# Edit distance
+def edit_distance(a,b,del_cost=lambda x:1,ins_cost=lambda x:1,subs_cost=lambda x,y:1):
+    D=numpy.zeros((len(a)+1,len(b)+1))
+    for i in range(1,len(a)+1):
+        D[i,0]=i
+        for j in range(1,len(b)+1):
+            D[0,j]=j
+            if a[i-1]==b[j-1]:
+                D[i,j]=D[i-1,j-1]
+            else:
+                D[i,j]=min(D[i-1,j]+del_cost(a[i-1]),# 1 costo borrado
+                           D[i,j-1]+ins_cost(b[j-1]), # 1 costo insercion
+                           D[i-1,j-1]+subs_cost(a[i-1],b[j-1]))# 1 es costo reemplazo
+    return D[len(a),len(b)]
 
 # WORD TOKENIZER
 def split_words(text):
