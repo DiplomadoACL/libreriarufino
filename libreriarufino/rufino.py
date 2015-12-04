@@ -151,6 +151,7 @@ def get_pages(url):
                 data=data[pos_end_page+7:]
             else:
             	data=data[pos_start_page:]
+            	break
 
 def get_articles(url,only_text=True):
     for page in get_pages(url):
@@ -206,8 +207,8 @@ WIKIPEDIA_URLS={
 "pl":"http://dumps.wikimedia.org/plwiki/20151102/plwiki-20151102-pages-meta-current.xml.bz2",
 "nl":"http://dumps.wikimedia.org/nlwiki/20151102/nlwiki-20151102-pages-meta-current.xml.bz2",
 "pt":"http://dumps.wikimedia.org/ptwiki/20151102/ptwiki-20151102-pages-meta-current.xml.bz2",
-#"ru":"http://dumps.wikimedia.org/ruwiki/20151102/ruwiki-20151102-pages-meta-current.xml.bz2",#decode err
-#"el":"http://dumps.wikimedia.org/elwiki/20151102/elwiki-20151102-pages-meta-current.xml.bz2",#decode err
+"ru":"http://dumps.wikimedia.org/ruwiki/20151102/ruwiki-20151102-pages-meta-current.xml.bz2",#decode err
+"el":"http://dumps.wikimedia.org/elwiki/20151102/elwiki-20151102-pages-meta-current.xml.bz2",#decode err
 "ca":"http://dumps.wikimedia.org/cawiki/20151102/cawiki-20151102-pages-meta-current.xml.bz2",
 "da":"http://dumps.wikimedia.org/dawiki/20151102/dawiki-20151102-pages-meta-current.xml.bz2",
 "ro":"http://dumps.wikimedia.org/rowiki/20151102/rowiki-20151102-pages-meta-current.xml.bz2",
