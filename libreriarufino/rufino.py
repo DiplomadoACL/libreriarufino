@@ -3,6 +3,20 @@ import urllib2
 import bz2
 import re
 import numpy
+from nltk.corpus import wordnet as wn
+
+# knowledge-based lexical similarity functions
+# 1. path similarity
+def path_similarity(a,b):
+    synsets_a=wn.synsets(a)
+    synsets_b=wn.synsets(b)
+    for synset_in_a in synsets_a:
+    	for synset_in_b in synsets_b:
+    	   path_length=float(1)/synset_in_a.path_similarity(synset_in_b)
+    	   print synset_in_a,synset_in_b,path_length
+    
+    
+
 
 # Edit distance
 def edit_distance(a,b,del_cost=lambda x:1,ins_cost=lambda x:1,subs_cost=lambda x,y:1):
