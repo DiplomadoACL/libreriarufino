@@ -10,10 +10,13 @@ from nltk.corpus import wordnet as wn
 def path_similarity(a,b):
     synsets_a=wn.synsets(a)
     synsets_b=wn.synsets(b)
+    max_sim_path=0
     for synset_in_a in synsets_a:
     	for synset_in_b in synsets_b:
-    	   path_length=float(1)/synset_in_a.path_similarity(synset_in_b)
-    	   print synset_in_a,synset_in_b,path_length
+    	   sim_path_length=synset_in_a.path_similarity(synset_in_b)
+    	   if sim_path_length>max_sim_path:
+    	   	max_sim_path=sim_path_length
+    return max_sim_path
     
     
 
