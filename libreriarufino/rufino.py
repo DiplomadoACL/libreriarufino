@@ -5,6 +5,19 @@ import re
 import numpy
 from nltk.corpus import wordnet as wn
 
+def monge_elkan(A,B,lexical_similarity,exponent=1):
+    summation=0.0
+    for a in A:
+    	max_similarity_versus_a=0.0
+    	for b in B:
+    	    similarity=(lexical_similarity(a,b))**exponent
+    	    if similarity>max_similarity_versus_a:
+    	    	max_similarity_versus_a=similarity
+    	summation+=max_similarity_versus_a
+    return (float(summation)/len(A))**(1.0/exponent)
+    	    
+
+
 # knowledge-based lexical similarity functions
 # 1. path similarity
 def path_similarity(a,b):
