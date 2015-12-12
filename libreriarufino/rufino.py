@@ -49,6 +49,11 @@ def edit_distance(a,b,del_cost=lambda x:1,ins_cost=lambda x:1,subs_cost=lambda x
                            D[i-1,j-1]+subs_cost(a[i-1],b[j-1]))# 1 es costo reemplazo
     return D[len(a),len(b)]
 
+def sim_edit_distance(a,b):
+    distance=edit_distance(a,b)
+    normalized_distance=float(distance)/max(len(a),len(b))
+    return 1.0-normalized_distance	
+
 # WORD TOKENIZER
 def split_words(text):
     SPECIAL_CHARACTERS=u",.;:(){}[]+*¡!¿?&%$#'/£~|="+'"'
